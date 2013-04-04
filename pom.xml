@@ -9,6 +9,7 @@
 
 	<name>NightSandwich</name>
 	<url>http://maven.apache.org</url>
+        <description>A Web app to order sandwich at night</description>
 
 	<properties>
 		<java.version>1.6</java.version>
