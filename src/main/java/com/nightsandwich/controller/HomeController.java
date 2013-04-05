@@ -3,6 +3,8 @@ package com.nightsandwich.controller;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value="/")
-	public ModelAndView test(HttpServletResponse response) throws IOException{
-		return new ModelAndView("home");
-	}
+    private static Logger logger = LoggerFactory.getLogger(HomeController.class);
+
+    @RequestMapping(value = "/")
+    public ModelAndView test(HttpServletResponse response) throws IOException {
+        logger.error("Call test home");
+        
+        return new ModelAndView("home");
+    }
 }

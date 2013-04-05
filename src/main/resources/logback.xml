@@ -1,0 +1,64 @@
+<configuration scan="true" scanPeriod="30 seconds" >
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n </pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="debugAppender" class="ch.qos.logback.core.FileAppender">
+    <file>${catalina.base}/logs/nightsandwich-debug.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="useLessAppender" class="ch.qos.logback.core.FileAppender">
+    <file>${catalina.base}/logs/nightsandwich-useless.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  
+  <appender name="nightsandwich" class="ch.qos.logback.core.FileAppender">
+    <file>${catalina.base}/logs/nightsandwich.log</file>
+    <append>true</append>
+    <!-- encoders are assigned the type
+         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+    <encoder>
+      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+  
+<!-- 
+  
+  <logger name="org.springframework.security" level="DEBUG">
+    <appender-ref ref="debugAppender" />
+  </logger>
+  <logger name="com.lvmh.pcis.cms.wrapper.impl" level="DEBUG">
+    <appender-ref ref="debugAppender" />
+  </logger>
+  
+  <logger name="org.springframework.web" level="DEBUG">
+    <appender-ref ref="debugAppender" />
+  </logger>
+  -->
+  
+  
+  <logger name="com.lvmh.pcis.sfweb.service.impl.CachingUrlBuilderServiceImpl" level="ERROR">
+    <appender-ref ref="useLessAppender" />
+  </logger>
+  
+</configuration>

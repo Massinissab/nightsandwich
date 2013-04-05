@@ -13,7 +13,7 @@
 
 	<properties>
 		<java.version>1.6</java.version>
-		<spring.version>3.1.0.RELEASE</spring.version>
+		<spring.version>3.2.2.RELEASE</spring.version>
 		<cglib.version>2.2.2</cglib.version>
 	</properties>
 
@@ -46,15 +46,6 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- CGLib for @Configuration -->
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>${cglib.version}</version>
-			<scope>runtime</scope>
-		</dependency>
-
-
 		<!-- Servlet Spec -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -68,6 +59,12 @@
 			<version>2.1</version>
 			<scope>provided</scope>
 		</dependency>
+                
+                <dependency>
+                    <groupId>ch.qos.logback</groupId>
+                    <artifactId>logback-classic</artifactId>
+                    <version>1.0.9</version>
+                </dependency>
 	</dependencies>
 
 	<repositories>
@@ -90,6 +87,25 @@
 					<target>${java.version}</target>
 				</configuration>
 			</plugin>
+                        <plugin>
+                            <groupId>org.cloudfoundry</groupId>
+                            <artifactId>cf-maven-plugin</artifactId>
+                            <version>1.0.0.M1</version>
+                            <configuration>
+                                <server>cloudfoundry</server>
+                                <target>http://api.cloudfoundry.com</target>
+                                <url>nightsandwich.cloudfoundry.com</url>
+                                <memory>256</memory>
+                            </configuration>
+
+                        </plugin>
 		</plugins>
 	</build>
+        <pluginRepositories>
+            <pluginRepository>
+                <id>repository.springframework.maven.milestone</id>
+                <name>Spring Framework Maven Milestone Repository</name>
+                <url>http://maven.springframework.org/milestone</url>
+            </pluginRepository>
+        </pluginRepositories>
 </project>
