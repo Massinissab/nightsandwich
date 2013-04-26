@@ -1,3 +1,7 @@
+<script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw62tDmdP9P5zPFpuJAjOYm4dMF6yQpb4&sensor=true">
+</script>
+    
 <jsp:include  page="/header/commander" />
 
     <div class="container-fluid">
@@ -24,7 +28,62 @@
                     
                 </div>
             </div>
+        
+        <div id="map-canvas" style="height: 400px; width: 500px"> &nbsp;test</div>
 
     </div>
+
+<script type="text/javascript">
+    var map;
+      function initialize() {
+        var mapOptions = {
+          center: new google.maps.LatLng(48.939247,2.472181),
+          zoom: 11,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+         map = new google.maps.Map(document.getElementById("map-canvas"),
+            mapOptions);
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      
+     $(document).ready(function(){
+          if (navigator.geolocation){
+              console.log("getting geolocation");
+              navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
+          }
+          else{
+            console.log("Geolocation is not supported by this browser.");
+          }
+         
+     });
+     
+     /**
+     * Position a marker on map
+     * @param {position} position :  position returned by the navigator
+     */
+    function positionOnMap(position) {
+        console.log("test");
+         var marker = new google.maps.Marker({
+            map: map,
+            position: position
+        });
+    }
+    function handleError(error){
+        switch(error.code){
+            case error.PERMISSION_DENIED:
+              console.log("User denied the request for Geolocation.");
+              break;
+            case error.POSITION_UNAVAILABLE:
+              console.log("Location information is unavailable.");
+              break;
+            case error.TIMEOUT:
+              console.log("The request to get user location timed out.");
+              break;
+            case error.UNKNOWN_ERROR:
+              console.log("An unknown error occurred.");
+              break;
+        }
+    }
+ </script>
 
     <jsp:include  page="common/footer.jsp" />
