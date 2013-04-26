@@ -15,10 +15,10 @@
                         <li><a data-toggle="pill" href="#desserts">Desserts</a></li>
                     </ul>
                     <div id="myTabContent" class="tab-content">
-                        <div class="tab-pane fade " id="sandwichs" >
+                        <div class="tab-pane fade active in" id="sandwichs" >
                           <p>Voici la sélection de sandwich que nous proposons pour votre plus grand plaisir.</p>
                         </div>
-                        <div class="tab-pane fade active in" id="pates">
+                        <div class="tab-pane fade" id="pates">
                           <p>Une selection de pâtes faîte maison. Un vrai régal.</p>
                         </div>
                         <div class="tab-pane fade" id="desserts">
