@@ -2,9 +2,8 @@
            
     <div class="container-fluid">
         <h4>Plusieurs moyens de commander s'offre à vous.</h4>
-        
-        
-         <div class="row-fluid">
+
+        <div class="row-fluid">
                 <div class="span12">
                     <dl>
                         <dt>Par Téléphone</dt>
@@ -13,9 +12,7 @@
                     </dl>
                     <dl>
                         <dt>Par Texto</dt>
-                        <dd>Vous pouvez précisez le contenu de la commande.</dd>
-                        <dd>Ou simplement envoyez un texto vide si vous voulez choisir une fois le livreur
-                            arrivé.</dd>
+                        <dd>Précisez le contenu de votre commande directement dans votre message.</dd>
                         <dd><a href="sms:0609255713" class="btn btn-primary"> Envoyer un texto</a></dd>
                     </dl>
                     

@@ -1,24 +1,25 @@
 function MapHandler (){
      var map; //Variable holding the map
+     var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
      
      this.drawMap  = function(){
         google.maps.event.addDomListener(window, 'load', initialize);
-        
-        //Insert current position marker
-        if (navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
-        }
      };
      
     function initialize() {
         var mapOptions = {
-          center: new google.maps.LatLng(48.939247,2.472181),
+          center: blancMesnilLatLng,
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           streetViewControl : false
         };
         map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
         drawDeliveryZone();
+       
+        //Insert current position marker
+        if (navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
+        }
       }
      /**
      * Position a marker on map
@@ -58,7 +59,7 @@ function MapHandler (){
     
     function drawDeliveryZone(){
         var pantinLatLng = new google.maps.LatLng(48.894765,2.409739);
-        var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
+       // var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
         var tremblayLatLng = new google.maps.LatLng(48.980344,2.55724);
         var noisyLeGrandLatLng = new google.maps.LatLng(48.848874,2.552648);
         //var bobignyLatLng = new google.maps.LatLng(48.9088,2.439727);
