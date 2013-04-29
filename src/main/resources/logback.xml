@@ -50,11 +50,11 @@
   <logger name="com.lvmh.pcis.cms.wrapper.impl" level="DEBUG">
     <appender-ref ref="debugAppender" />
   </logger>
-  
-  <logger name="org.springframework.web" level="DEBUG">
-    <appender-ref ref="debugAppender" />
-  </logger>
   -->
+  <logger name="org.springframework" level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </logger>
+  
   
   
   <logger name="com.lvmh.pcis.sfweb.service.impl.CachingUrlBuilderServiceImpl" level="ERROR">

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -26,9 +27,10 @@ public class PositionController {
         return "observePosition";
     }
     
-    @RequestMapping(method = RequestMethod.POST)
-    public void updatePosition(@RequestBody Position position){
+    @RequestMapping(value="/update",method = RequestMethod.POST,consumes = "application/json")
+    public @ResponseBody String updatePosition(@RequestBody Position position){
         this.currentPosition = position;
+        return "updateOk";
     }
     
     @RequestMapping(method = RequestMethod.GET)

@@ -71,6 +71,13 @@
                     <artifactId>jstl</artifactId>
                     <version>1.2</version>
                 </dependency>
+                
+                <!-- JSON marshalling API -->
+                <dependency>
+                    <groupId>org.codehaus.jackson</groupId>
+                    <artifactId>jackson-mapper-asl</artifactId>
+                    <version>1.9.12</version>
+                </dependency>
 	</dependencies>
 
 	<repositories>

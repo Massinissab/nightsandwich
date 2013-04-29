@@ -1,10 +1,9 @@
 function MapHandler (){
-     var map; //Variable holding the map
-     this.geoMarker;
+     this.map; //Variable holding the map
      var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
      
      this.drawMap  = function(){
-        google.maps.event.addDomListener(window, 'load', initialize);
+        this.initialize();
      };
      
      this.initialize = function () {
@@ -14,15 +13,14 @@ function MapHandler (){
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           streetViewControl : false
         };
-        map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
-        drawDeliveryZone();
+        this.map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
+        this.drawDeliveryZone();
         
         this.geoMarker = new GeolocationMarker();
         this.geoMarker.setCircleOptions({fillColor: '#808080'});
        
         google.maps.event.addListener(this.geoMarker, 'position_changed', function() {
-            console.log("event fired");
-            map.setCenter(this.getPosition());
+            this.map.setCenter(this.getPosition());
           //Uncomment that to zoom the map around the client position
          // map.fitBounds(this.getBounds());
         });
@@ -30,29 +28,8 @@ function MapHandler (){
         google.maps.event.addListener(this.geoMarker, 'geolocation_error', function(e) {
           alert('There was an error obtaining your position. Message: ' + e.message);
         });
-        this.geoMarker.setMap(map);
-        //Insert current position marker
-        /*if (navigator.geolocation){
-            navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
-        }*/
+        this.geoMarker.setMap(this.map);
       }
-     /**
-     * Position a marker on map
-     * @param {position} position :  position returned by the navigator
-     */
-    function positionOnMap(position) {
-        var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-        var marker = new google.maps.Marker({
-          map: map,
-          position: pos,
-          animation: google.maps.Animation.DROP,
-          title : "Votre position"
-        });
-         
-        map.setCenter(pos);
-    }
     
     function handleError(error){
         switch(error.code){
@@ -72,7 +49,7 @@ function MapHandler (){
     }
     
     
-    function drawDeliveryZone(){
+    this.drawDeliveryZone = function (){
         var pantinLatLng = new google.maps.LatLng(48.894765,2.409739);
        // var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
         var tremblayLatLng = new google.maps.LatLng(48.980344,2.55724);
@@ -94,12 +71,10 @@ function MapHandler (){
           strokeWeight: 3,
           fillColor: 'green',
           fillOpacity: 0.35,
-          map: map,
+          map: this.map,
           title: "Test"
         });
         
     }
 };
 
-var mapHandler = new MapHandler();
-mapHandler.drawMap();
