@@ -7,7 +7,7 @@
 <script src="resources/js/maps/geolocationmarker-compiled.js"></script>
 
 <script type="text/javascript" src="resources/js/maps/mapHandler.js"></script>
-
+<script type="text/javascript" src="resources/js/maps/mapNotifier.js"></script>
 
 <script type="text/javascript" >
     

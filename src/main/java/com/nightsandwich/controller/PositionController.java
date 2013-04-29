@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/position")
 public class PositionController {
     
-    private Position currentPosition;
+    private Position currentPosition = new Position();
     
     @RequestMapping("/live")
     public String observePosition(){
@@ -34,7 +34,7 @@ public class PositionController {
     }
     
     @RequestMapping(method = RequestMethod.GET)
-    public Position getPosition(){
+    public @ResponseBody Position getPosition(){
         return this.currentPosition;
     }
     
