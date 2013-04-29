@@ -1,16 +1,17 @@
 function MapHandler (){
      var map; //Variable holding the map
+    // this.geoMarker;
      
      this.drawMap  = function(){
-        google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.event.addDomListener(window, 'load', this.initialize);
         
         //Insert current position marker
-        if (navigator.geolocation){
+        /*if (navigator.geolocation){
             navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
-        }
+        }*/
      };
      
-    function initialize() {
+     this.initialize = function () {
         var mapOptions = {
           center: new google.maps.LatLng(48.939247,2.472181),
           zoom: 11,
@@ -19,6 +20,22 @@ function MapHandler (){
         };
         map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
         drawDeliveryZone();
+        this.geoMarker = new GeolocationMarker();
+        this.geoMarker.setCircleOptions({fillColor: '#808080'});
+
+        google.maps.event.addListener(this.geoMarker, 'position_changed', function() {
+            console.log("event fired");
+            map.setCenter(this.getPosition());
+          //Uncomment that to zoom the map around the client position
+         // map.fitBounds(this.getBounds());
+        });
+
+        google.maps.event.addListener(this.geoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+
+        this.geoMarker.setMap(map);
+
       }
      /**
      * Position a marker on map
