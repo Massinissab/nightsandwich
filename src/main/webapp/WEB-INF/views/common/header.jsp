@@ -15,41 +15,14 @@
         <link href="${pageContext.servletContext.contextPath}/resources/css/application.css" rel="stylesheet">
         <script src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.js"> </script>
         <link href="${pageContext.servletContext.contextPath}/resources/css/bootstrap-responsive.css" rel="stylesheet">
-        
-        
-         <style type="text/css">
-                @media (min-width: 980px) {
-                    body {
-                      padding-top: 60px;
-                      padding-bottom: 40px;
-                    }
-                    .sidebar-nav {
-                      padding: 9px 0;
-                    }
-                }
-                
-
-                @media (max-width: 980px) {
-                  /* Enable use of floated navbar text */
-                  .navbar-text.pull-right {
-                    float: none;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                  }
-                }
-    </style>
     
-    <script type="text/javascript" >
-        $(document).ready(function(){
-       });
-    </script>
     </head>
     <body>
         
         <div class="navbar navbar-inverse navbar-fixed-top">
          <div class="navbar-inner">
            <div class="container-fluid">
-             <a class="brand" href="#">Project</a>
+                <a class="brand" href="/">Night Sandwich</a>
              <ul class="nav">
                  <li <c:if test="${categorie == 'commander'}">class="active"</c:if>><a href="/">Commander</a></li>
                  <li <c:if test="${categorie == 'about'}">class="active"</c:if>><a href="about">About</a></li>
