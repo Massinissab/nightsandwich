@@ -8,8 +8,8 @@ function MapObserver (){
             $.ajax({
                 type: "POST",
                 url: "update",
-                data: {latitude:this.getPosition().lat(),longitude:this.getPosition().lng()},
-                success: function(){console.log(success)},
+                data: {"latitude":this.getPosition().lat(),"longitude":this.getPosition().lng()},
+                success: function(){console.log(success);},
                 contentType:"application/json"
               });
      });

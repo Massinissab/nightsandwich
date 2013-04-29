@@ -8,12 +8,12 @@
                     <dl>
                         <dt>Par Téléphone</dt>
                         <dd>Il vous suffit de cliquer sur le bouton et de commander directement au livreur</dd>
-                        <dd><a href="tel:0627272727" class="btn btn-primary"> Appelez pour passer commande </a></dd>
+                        <dd><a href="tel:0618996445" class="btn btn-primary"> Appelez pour passer commande </a></dd>
                     </dl>
                     <dl>
                         <dt>Par Texto</dt>
                         <dd>Précisez le contenu de votre commande directement dans votre message.</dd>
-                        <dd><a href="sms:0609255713" class="btn btn-primary"> Envoyer un texto</a></dd>
+                        <dd><a href="sms:0618996445" class="btn btn-primary"> Envoyer un texto</a></dd>
                     </dl>
                     
                 </div>
