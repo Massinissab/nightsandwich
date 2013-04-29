@@ -1,5 +1,6 @@
 function MapHandler (){
      var map; //Variable holding the map
+     this.geoMarker;
      var blancMesnilLatLng = new google.maps.LatLng(48.946406,2.465744);
      
      this.drawMap  = function(){
@@ -15,11 +16,25 @@ function MapHandler (){
         };
         map = new google.maps.Map(document.getElementById("map-canvas"),mapOptions);
         drawDeliveryZone();
+        
+        this.geoMarker = new GeolocationMarker();
+        this.geoMarker.setCircleOptions({fillColor: '#808080'});
        
+        google.maps.event.addListener(this.geoMarker, 'position_changed', function() {
+            console.log("event fired");
+            map.setCenter(this.getPosition());
+          //Uncomment that to zoom the map around the client position
+         // map.fitBounds(this.getBounds());
+        });
+
+        google.maps.event.addListener(this.geoMarker, 'geolocation_error', function(e) {
+          alert('There was an error obtaining your position. Message: ' + e.message);
+        });
+        this.geoMarker.setMap(map);
         //Insert current position marker
-        if (navigator.geolocation){
+        /*if (navigator.geolocation){
             navigator.geolocation.getCurrentPosition(positionOnMap,handleError);
-        }
+        }*/
       }
      /**
      * Position a marker on map
