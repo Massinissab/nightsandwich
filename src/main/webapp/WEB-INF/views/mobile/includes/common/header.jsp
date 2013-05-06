@@ -7,22 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Magic sandwich</title>
   <link rel="stylesheet" href="/resources/css/jquery.mobile-1.3.0.css">
+  <link rel="stylesheet" href="/resources/css/mobile/application.css">
   <script src="/resources/js/jquery-1.9.1.min.js"></script>
   <script src="/resources/js/jquery.mobile-1.3.0.js"></script>
 </head>
 <body>
  
-<div data-role="page">
-  <div data-role="header" data-position="fixed">
-      <a href="/" data-rel="back" data-inline="true" data-icon="arrow-l">Retour</a>
+<div data-role="page" data-theme="c">
+  <div data-role="header" data-position="fixed" role="banner">
+      <c:if test="${backButton}">
+          <a href="/" data-rel="back" data-direction="reverse" data-inline="true" data-icon="arrow-l" data-corners="true" class="ui-btn-left">Retour</a>
+      </c:if>
     <h1>Magic Sandwich</h1>
-    <a href="/" data-role="button" data-icon="home">Accueil</a>
+    
+    <a href="#mypanel" data-role="button" data-icon="bars" data-iconpos="notext" data-inline="true" class="ui-btn-right">Icon only</a>
   </div>
   <div data-role="content">
-      <div data-display="overlay" data-role="panel" id="mypanel">
-          <ul data-role="listview">
-                <li><a href="test" data-transition="slide" data-inline="true">Test</a></li>
-                <li><a href="commander">Audi</a></li>
-                <li><a href="about">BMW</a></li>
-          </ul>
+      
+      <!-- Panel -->
+      <div data-display="overlay" data-role="panel" id="mypanel" data-position="right" data-theme="c">
+            <ul data-role="listview" data-theme="a">
+                  <li><a  href="/">Commander</a></li>
+                  <li><a  href="/order">Ma commande</a></li>
+                  <li><a  href="/contact">Pour nous contacter</a></li>
+                  <li><a href="/about">A propos</a></li>
+            </ul>
+          
       </div><!-- /panel -->

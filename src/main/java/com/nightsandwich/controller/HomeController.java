@@ -1,5 +1,6 @@
 package com.nightsandwich.controller;
 
+import com.nightsandwich.model.products.ProductCategorie;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +19,8 @@ public class HomeController {
     @RequestMapping(value = "/")
     public ModelAndView test(HttpServletResponse response) throws IOException {
         logger.error("Call test home");
-        
-        return new ModelAndView("accueil");
+        ModelAndView mav = new ModelAndView("accueil");
+        mav.addObject("productCategories", ProductCategorie.values());
+        return mav;
     }
 }

@@ -33,11 +33,11 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/products/sandwich").setViewName("products/sandwich");
+       /* registry.addViewController("/products/sandwich").setViewName("products/sandwich");
         registry.addViewController("/products/pates").setViewName("products/pates");
         registry.addViewController("/products/desserts").setViewName("products/desserts");
         registry.addViewController("/products/boissons").setViewName("products/boissons");
-        registry.addViewController("/products/gourmandises").setViewName("products/gourmandises");
+        registry.addViewController("/products/gourmandises").setViewName("products/gourmandises");*/
         registry.addViewController("/bootstrap").setViewName("bootstrap");
         registry.addViewController("/about").setViewName("about");
         registry.addViewController("/contact").setViewName("contact");

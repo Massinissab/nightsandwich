@@ -1,5 +1,5 @@
 
-<jsp:include page="includes/common/header.jsp"></jsp:include>
+<jsp:include page="/header/mobile"></jsp:include>
              
   <p>About page</p>
 
