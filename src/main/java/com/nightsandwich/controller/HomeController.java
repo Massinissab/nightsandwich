@@ -19,6 +19,6 @@ public class HomeController {
     public ModelAndView test(HttpServletResponse response) throws IOException {
         logger.error("Call test home");
         
-        return new ModelAndView("home");
+        return new ModelAndView("accueil");
     }
 }

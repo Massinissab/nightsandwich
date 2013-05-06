@@ -37,7 +37,7 @@
                     </ul>
                     <div id="myTabContent" class="tab-content">
                         <div class="tab-pane fade active in" id="sandwichs" >
-                          <p>Voici la sélection de sandwich que nous proposons pour votre plus grand plaisir.</p>
+                            <jsp:include  page="includes/products/sandwich.jsp" />
                         </div>
                         <div class="tab-pane fade" id="pates">
                           <p>Une selection de pâtes faîte maison. Un vrai régal.</p>

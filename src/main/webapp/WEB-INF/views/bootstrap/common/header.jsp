@@ -22,7 +22,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
          <div class="navbar-inner">
            <div class="container-fluid">
-                <a class="brand" href="/">Night Sandwich</a>
+                <a class="brand" href="/">Magic Sandwich</a>
              <ul class="nav">
                  <li <c:if test="${categorie == 'commander'}">class="active"</c:if>><a href="/">Commander</a></li>
                  <li <c:if test="${categorie == 'about'}">class="active"</c:if>><a href="about">About</a></li>
