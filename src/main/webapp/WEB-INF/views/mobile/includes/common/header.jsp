@@ -5,6 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" >
   <title>Magic sandwich</title>
   <link rel="stylesheet" href="/resources/css/jquery.mobile-1.3.0.css">
   <link rel="stylesheet" href="/resources/css/mobile/application.css">
