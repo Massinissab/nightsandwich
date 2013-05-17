@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="/resources/css/mobile/application.css">
   <script src="/resources/js/jquery-1.9.1.min.js"></script>
   <script src="/resources/js/jquery.mobile-1.3.0.js"></script>
+  <script src="/resources/js/add2home.js"></script>
+  <link rel="stylesheet" href="/resources/css/add2home.css">
 </head>
 <body>
  
