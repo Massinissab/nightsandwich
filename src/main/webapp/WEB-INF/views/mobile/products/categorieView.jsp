@@ -7,7 +7,7 @@
         <c:forEach var="product" items="${productCategorie.productList}">
             <li data-role="fieldcontain">
                <label for="select-${product}" class="select">${product.name}</label>
-               <select data-inline="true"  name="select-${product}" id="select-${product}" data-native-menu="false">
+               <select data-inline="true"  name="select-${product}" id="select-${product}" data-native-menu="false" data-mini="true">
                     <option>Quantité :</option>
                     <option value="1">1</option>
                     <option value="2">2</option>

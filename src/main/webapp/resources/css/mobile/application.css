@@ -1,4 +1,4 @@
-@media (min-width: 28em){
+@media (max-width: 28em){
     .ui-field-contain label.ui-select {
     vertical-align: top;
     display: inline-block;
