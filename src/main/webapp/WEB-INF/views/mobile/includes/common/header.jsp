@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes" >
   <title>Magic sandwich</title>
-  <link rel="stylesheet" href="/resources/css/jquery.mobile-1.3.0.css">
   <link rel="stylesheet" href="/resources/css/mobile/application.css">
+  <link rel="stylesheet" href="/resources/css/jquery.mobile-1.3.0.css">
   <script src="/resources/js/jquery-1.9.1.min.js"></script>
   <script src="/resources/js/jquery.mobile-1.3.0.js"></script>
   <script src="/resources/js/add2home.js"></script>

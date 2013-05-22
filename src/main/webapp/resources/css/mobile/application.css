@@ -1,8 +1,10 @@
-@media (max-width: 28em){
-    .ui-field-contain label.ui-select {
+.products .ui-select {
     vertical-align: top;
     display: inline-block;
     width: 20%;
     margin: 0 2% 0 0;
-    }
+}
+
+.products .select {
+    width: 64%;
 }

@@ -3,10 +3,12 @@
 <jsp:include page="/header/mobile"></jsp:include>
              
 <h4>${productCategorie.accroche}</h4>
-<ul data-role="listview" data-inset="true">
+
+<form>
+<ul class="products" data-role="listview" data-inset="true">
         <c:forEach var="product" items="${productCategorie.productList}">
             <li data-role="fieldcontain">
-               <label for="select-${product}" class="select">${product.name}</label>
+               <label for="select-${product}" class="select"><strong>${product.name} </strong> </label>
                <select data-inline="true"  name="select-${product}" id="select-${product}" data-native-menu="false" data-mini="true">
                     <option>Quantité :</option>
                     <option value="1">1</option>
@@ -18,6 +20,7 @@
         </c:forEach>
         
     </ul>
+</form>
 
 
 <jsp:include page="../includes/common/footer.jsp"></jsp:include>
