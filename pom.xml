@@ -24,6 +24,12 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
+                        <exclusions>
+                            <exclusion>
+                               <groupId>commons-logging</groupId>
+                               <artifactId>commons-logging</artifactId>
+                            </exclusion>
+                        </exclusions>
 		</dependency>
 
 		<dependency>
@@ -64,8 +70,14 @@
                 <dependency>
                     <groupId>ch.qos.logback</groupId>
                     <artifactId>logback-classic</artifactId>
-                    <version>1.0.9</version>
+                    <version>1.0.12</version>
                 </dependency>
+                <dependency>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                    <version>1.7.5</version>
+                    <scope>runtime</scope>
+                 </dependency>
                 <!-- Jstl dependencies -->
                 <dependency>
                     <groupId>javax.servlet</groupId>
@@ -97,8 +109,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.0.2</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<source>1.6</source>
+					<target>1.6</target>
                                         <encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
